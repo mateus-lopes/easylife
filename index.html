@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link 
+        rel="stylesheet" 
+        href="css/style.css"
+    />
+    <title>Easy Life | Aproveite uma vida mais organizada com Easy Life</title>
+</head>
+<body class="bg-white">
+    <!-- loading -->
+    <div class="bg-white loading">
+        <span id="load_id">
+            <div class="loading-content">
+                <img 
+                    src="img/easy_500x500.png" 
+                    class="img-fluid" 
+                    alt="Logo Easy Life" 
+                    title="Easy Life" 
+                    srcset=""
+                />
+                <span class="b text-center d-block">Carregando...</span>
+            </div>
+        </span>
+    </div><!-- /loading -->
+    <!-- header -->
+    <header>
+        <!-- header_logo -->
+        <div class="container-fluid mb-4 bg-white shadow-css">
+            <a href="index.html">
+                <img 
+                    src="img/logo_164x50.png" 
+                    class="img-fluid" 
+                    alt="Logo Easy Life" 
+                    title="Easy Life" 
+                    srcset=""
+                />
+            </a>
+        </div><!-- /header_logo -->
+        <!-- header_nav -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav>
+                        <!-- nav_icons -->
+                        <ul class="navbar-icons">
+                            <li class="square-grid">
+                                <a class="" href="index.html">
+                                    <img 
+                                    src="img/icon/Tick Square.svg" 
+                                    alt=""
+                                    class="icon-svg"
+                                    />
+                                </a>
+                            </li>
+                            <li class="square-grid">
+                                <a class="" href="notes.html">
+                                    <img 
+                                    src="img/icon/Document.svg" 
+                                    alt=""
+                                    class="icon-svg"
+                                    />
+                                </a>
+                            </li>
+                            <li class="square-grid">
+                                <a class="" href="reminders.html">
+                                    <img 
+                                    src="img/icon/Calendar.svg" 
+                                    alt=""
+                                    class="icon-svg"
+                                    />
+                                </a>
+                            </li>
+                            <li class="square-grid"> 
+                                <a id="nav_id" href="#">
+                                    <img 
+                                src="img/icon/Setting.svg" 
+                                alt=""
+                                class="icon-svg"
+                                />
+                            </a>
+                        </li>
+                    </ul><!-- /nav_icons -->
+                    <!-- nav_content -->
+                    <ul id="content_nav" class="navbar bigOut">
+                        <li class="nav-title">
+                            <p class="text-light p-0 m-0">Menu</p>
+                        </li>
+                        <li class="nav-item">
+                            <a class="text-dark" href="profile.html">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- dashboard -->
+                            <a class="text-dark" href="login_profile.html">Suporte</a>
+                        </li>
+                            <li class="nav-item br-bottom">
+                                <a onclick="logOut()" class="text-dark">Sair</a>
+                            </li>
+                        </ul>
+                    </nav><!--/nav_content -->
+                </div><!-- /header_nav -->
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- main -->
+    <main class="mb-5 px-4 pb-4">
+        <div class="container">
+            <!-- title_main -->
+            <h1 class="pt-2 pb-2">Tarefas:</h1>
+            <hr class="mt-2"><!-- /title_main -->
+            <!-- btn_addTask -->
+            <div class="input-group w-100 my-3">
+                <input id="new_task" type="text" class="form-control" placeholder="Digite uma nova tarefa" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <a id="btn_addTask" class="btn-addTask btn-blue d-flex" onclick="addTask()" href="#" type="button">
+                        <img 
+                            src="img/icon/plus.svg" 
+                            alt="Icone de Deletar"
+                            class="img-fluid"
+                        />
+                    </a>
+                </div>
+            </div><!-- /btn_addTask -->
+            <div class="row pb-2">
+                <div class="col-8 pl-0 text-left">
+                    <span class="invisible" id="filter_id"> 1</span>
+                    <span id="text_filter" class="pl-0 btn btn-sm text-success border-bottom">
+                        Carrengando...
+                    </span>
+                </div>
+                <div class="col-4 px-0 text-right">
+                    <!-- btn_filtro -->
+                    <div class="dropdown ml-auto mr-0">
+                        <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filtrar
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" onclick="readTasks('1')" href="#">
+                                Ordem Alfabetica (A-Z)
+                            </a>
+                            <a class="dropdown-item" onclick="readTasks('2')" href="#">
+                                Ordem Alfabetica (Z-A)
+                            </a>
+                            <a class="dropdown-item" onclick="readTasks('3')" href="#">
+                                Mais Recente
+                            </a>
+                            <a class="dropdown-item" onclick="readTasks('4')" href="#">
+                                Mais Antigo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- /btn_filtro -->
+            <!-- ul_taskList -->
+            <ul id="taskList" class="list-group task-ul">
+                <li class="task-li task-div">
+                    Carrengando...
+                </li>
+            </ul><!-- /ul_taskList -->
+        </div>
+    </main><!-- /main -->
+    <!-- footer -->
+    <footer class="bg-blue mt-5">
+        <!-- div_logoFooter -->
+        <div class="container p-3 p-sm-4">
+            <a href="#">
+                <img src="img/Group 45.png" class="img-codeShark" alt="" srcset="">
+            </a>    
+        </div><!-- /div_logoFooter -->
+    </footer><!-- /footer -->
+    <!-- bootstrap -->
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"
+    ></script>
+    <!-- Alert bonito -->
+    <script 
+        src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"
+    ></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script 
+        src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"
+    ></script>
+    <script 
+        src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"
+    ></script>
+    <script 
+        src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"
+    ></script>
+    <!-- scripts -->
+    <script
+        src="js/init.js"
+    ></script>
+    <script
+        src="js/auth.js"
+    ></script>
+    <script
+        src="js/main.js"
+    ></script>
+    <script
+        src="js/tasks_UPDATE.js "
+    ></script>
+</body>
+</html>

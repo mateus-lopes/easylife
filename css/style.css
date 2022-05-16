@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+* {padding: 0;margin: 0;}
+
+body::-webkit-scrollbar { 
+	display: none;
+}
+
+body {
+    font-family: 'Quicksand';
+}
+
+h1 {
+    font-size: 24px;
+}
+
+hr {
+	border: 0;
+	border-top: 2px solid #293038;
+}
+
+b {
+    font-weight: 500;
+}
+
+.row {
+    width: 100%;
+    margin: 0;
+}
+
+/* ------------------------ */
+/* ---------LOADING --------*/
+/* ------------------------ */
+
+.loading {
+    width:100%;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation: fadeIn .5s;
+}
+
+.loading-content img {
+    width: 250px;
+    display: block;
+    opacity: 0;
+    animation: bounce 3s alternate;
+    -webkit-animation: bounce 3s alternate;
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0px);opacity: 1;}
+    25% {transform: translateY(-15px);opacity: 1;}
+    50% {transform: translateY(0px);opacity: 1;}
+    75% {transform: translateY(-15px);opacity: 1;}
+    99% {transform: translateY(0);opacity: 1;}
+    100% {transform: translateY(-15px);opacity: 0;}
+}
+@-webkit-keyframes bounce {
+    0% {transform: translateY(0px);opacity: 1;}
+    25% {transform: translateY(-30px);opacity: 1;}
+    50% {transform: translateY(0px);opacity: 1;}
+    75% {transform: translateY(-30px);opacity: 1;}
+    99% {transform: translateY(0px);opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+@keyframes bigIn {
+    from {
+        margin-top: -160px;
+        opacity: 0;
+    }
+    to   {
+        margin-top: 0px;
+        opacity: 1; 
+    }
+}
+
+@keyframes bigOut {
+    from {
+        display: block;
+        height: auto;
+        width: 100%;
+        margin-top: 0px;
+        opacity: 1;
+    }
+    to {
+        display: block;
+        height: auto;
+        width: 100%;
+        margin-top: -160px;
+        opacity: 0;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s;
+}
+
+.bigIn {
+    animation: bigIn .8s;
+}
+
+.bigOut {
+    height: 1px;
+    width: 1px;
+    opacity: 0;
+    animation: bigOut .8s;
+}
+
+/* ------------------------ */
+/* --------- HEADER --------*/
+/* ------------------------ */
+
+.shadow-css {
+    box-shadow: 0px 7px 20px 2px rgba(0, 0, 0, 0.12);
+}
+
+.hidden{
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    margin-top: -1px;
+    margin-left: -1px;
+    animation: fadeIn .5s;
+}
+
+header {
+    display: block;
+    text-align: center;
+    margin-bottom: -16px;
+}
+
+header img {
+    padding: 1em 0;
+}
+
+.navbar-icons {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0 0 1.2em 0;
+}
+
+.square-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5em;
+    height: 5em;
+    border-radius: 14px;
+    z-index: 1;
+    transition: all .2s ease-in-out
+}
+
+.square-grid a:hover {
+    text-decoration: none;
+}
+
+.square-grid:nth-child(1) {background-color: #47A69A;}
+.square-grid:nth-child(2) {background-color: #A64747;}
+.square-grid:nth-child(3) {background-color: #4767A6;}
+.square-grid:nth-child(4) {background-color: #293038;}
+
+.navbar {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    border-radius: 14px;
+    padding: 0;
+}
+
+.nav-item {
+    background-color: #f1f1f1;
+    width: 100%;
+    padding: .5em;
+}
+
+.nav-title {
+    width: 100%;
+    padding: .5em;
+    background-color: #293038;
+    border-radius: 14px 14px 0 0;
+}
+
+.br-bottom {
+    border-radius: 0 0 14px 14px;
+}
+
+/* ------------------------ */
+/* --------- MAIN --------- */
+/* ------------------------ */
+
+
+
+
+/*  */
+
+footer {
+    display: block;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+
+.bg-blue {
+    background-color:#00A0E9;
+}
+
+.img-codeShark {
+    display: block;
+    height: 23px;
+    margin: 0 auto;
+}
+
+/*  */
+
+
+
+.login-box {
+    width:100%;
+    height: 69vh;
+    display: flex;
+    position: relative;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    animation: fadeIn .5s;
+}
+
+.p-relative {
+    position: relative !important;
+}
+
+.ajust {
+    height: 100% !important;
+}
+
+.z-0 {
+    z-index: 0 !important;
+}
+
+
+/* taks */
+
+.task-ul {
+    list-style: none;
+}
+
+.task-li {
+    background-color: #F0F0F0;
+    padding: 5px;
+    border-radius: 14px;
+}
+
+.task-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.icon-deleteTask {
+    padding: 1em;
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/icon/Close\ Square.svg');
+    background-color: #F0F0F0;
+    border-radius: 0 14.4px 14.4px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-blue {
+    background-color: #00A0E9;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #bc4343;
+}
+
+.btn-addTask {
+    padding: 0 1em;
+    border-radius: 0 14.4px 14.4px 0;
+}
+
+.form-control {
+    background-color: #F0F0F0;
+    border: none;
+    color: #293038;
+    border-radius: 14px;
+    padding: 0 1.1em;
+}
+
+.form-control:focus, .form-control:active, .form-shadow {
+    background-color: #F0F0F0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.icon {
+    width: 18px;  
+    margin-top: -2px;
+}
+
+/* option */
+
+option:hover {
+    background-color: #00A0E9 !important;
+    color: #fff;
+    padding:45em;
+}
+
+.deleteReminder {
+    position: absolute;
+    right: .5em;
+    top: .5em;
+    padding: 1em;
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/icon/Close\ Square.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+}

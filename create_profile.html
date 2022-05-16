@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link 
+        rel="stylesheet" 
+        href="css/style.css"
+    />
+    <title>Easy Life | Aproveite uma vida mais organizada com Easy Life</title>
+</head>
+<body class="bg-white">
+    <!-- header -->
+    <header>
+        <!-- header_logo -->
+        <div class="container-fluid bg-white">
+            <img 
+                src="img/easy_500x500.png" 
+                class="img-fluid" 
+                alt="Logo Easy Life" 
+                title="Easy Life" 
+                width="90px"
+                height="90px"
+                srcset=""
+            />
+        </div><!-- /header_logo -->
+    </header><!-- /header -->
+    <!-- main -->
+    <main>
+        <div class="login-box ajust pt-3 px-4">
+            <div class="container">
+                <!-- title_main -->
+                <h1 class="pt-2 pb-2">Criar Conta:</h1>
+                <hr class="mt-2"><!-- /title_main -->
+                <!-- form_login -->
+                <div>
+                    <div class="form-group">
+                        <label for="name">
+                            Nome Completo
+                        </label>
+                        <input 
+                            placeholder="Ex: José Carlos" 
+                            type="text" 
+                            class="form-control" 
+                            id="name" 
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            Email
+                        </label>
+                        <input 
+                            placeholder="Ex: josecarlos@gmail.com" 
+                            type="email" 
+                            class="form-control" 
+                            id="email" 
+                        />
+                        <small id="emailHelp" class="form-text text-muted">
+                            Nunca compartilharemos seu e-mail com mais ninguém.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">
+                            Senha
+                        </label>
+                        <input 
+                            placeholder="Ex: Jose22aBc" 
+                            type="password" 
+                            class="form-control" 
+                            id="password"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="password_verification">
+                            Repita sua Senha
+                        </label>
+                        <input 
+                            placeholder="Ex: Jose22aBc" 
+                            type="password" 
+                            class="form-control" 
+                            id="password_verification"
+                        />
+                    </div>
+                    <div class="form-group form-check">
+                        <input 
+                            type="checkbox" 
+                            class="form-check-input" 
+                            id="checkbox"
+                        />
+                        <label class="form-check-label" for="checkbox">
+                            Tenho mais de 12 anos
+                        </label>
+                    </div>
+                    <button onclick="signUp()" class="btn btn-blue btn-block">
+                        Criar Conta
+                    </button>
+                    <div class="container">
+                        <small class="d-block text-center p-3">
+                            <a href="login_profile.html"class="text-muted">Já possui uma conta?</a>
+                        </small>
+                        <small class="d-block text-center p-3">
+                            <a href="index.html"class="text-muted">link de acesso rapido</a>
+                        </small>
+                    </div>
+                </div><!-- /form-login -->
+            </div>
+        </div>
+    </main><!-- /main -->
+    <!-- footer -->
+    <!-- footer -->
+    <footer class="bg-blue p-relative mt-5">
+        <!-- div_logoFooter -->
+        <div class="container p-3 p-sm-4">
+            <a href="#">
+                <img src="img/Group 45.png" class="img-codeShark" alt="" srcset="">
+            </a>    
+        </div><!-- /div_logoFooter -->
+    </footer><!-- /footer -->
+    <!-- bootstrap -->
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"
+    ></script>
+    <!-- Alert bonito -->
+    <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <!-- scripts -->
+    <script
+        src="js/init.js"
+    ></script>
+    <script
+        src="js/auth.js"
+    ></script>
+</body>
+</html>
