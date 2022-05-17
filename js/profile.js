@@ -17,7 +17,6 @@ async function getUser() {
             })
         } else {
             currentUser.uid = user.uid
-            console.log(currentUser.uid)
             setTimeout(function() {
                 $("body").addClass("fadeIn")
             });

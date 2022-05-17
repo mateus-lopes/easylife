@@ -1,7 +1,14 @@
-let reminders = []
-let filter_consult = document.getElementById('filter_consult')
-let filter_day = document.getElementById('filter_day')
-let filter_month = document.getElementById('filter_month')
+// config banco de dados
+let db_read;
+let reminders;
+let id_user;
+// config filtro
+let filter_id = document.getElementById('filter_id').innerText;
+let filter_consult = document.getElementById('filter_consult');
+// config filtro por data
+let current_data = new Date;
+let current_month = current_data.getMonth() + 1;
+let current_day = current_data.getDate();
 
 function createDelButton(reminder){
     const newReminderDel = document.createElement('a');
@@ -43,7 +50,7 @@ function renderReminders() {
             newLembrete.setAttribute('class',`${doc.dia} list-group-item card border my-3`)
             // contruindo a li
             newLembrete.appendChild(createDelButton(doc))
-            newLembrete.appendChild(createTextSmall(doc.data))
+            newLembrete.appendChild(createTextSmall(doc.calendar))
             newLembrete.appendChild(createTextSmall(doc.dia))
             newLembrete.appendChild(createTitle(doc.title))
             newLembrete.appendChild(createText(doc.text))
@@ -52,60 +59,71 @@ function renderReminders() {
     }
 }
 
-async function readReminders(x){
+async function readReminders(x, id){
+    if (x){filter_id = x}
+    if (id){id_user = id}
     reminders = []
-    if(!x || x=='1'){
-        let logreminders = await db.collection('reminders')
-        .orderBy("title", "asc").get()
-        for (doc of logreminders.docs) {
-            reminders.push({
-                id: doc.id,
-                title: doc.data().title,
-                text: doc.data().text,
-                data: doc.data().data,
-                dia: doc.data().dia,
-            })
-        }
-        filter_consult.innerHTML = 'Ordem Alfabetica (A-Z)'
-    } else if(x=='2'){
-        let logreminders = await db.collection("reminders")
-        .orderBy("title", "desc").get()
-        for (doc of logreminders.docs) {
-            reminders.push({
-                id:doc.id,
-                title: doc.data().title,
-                text: doc.data().text,
-                data: doc.data().data,
-                dia: doc.data().dia,
-            })
-        }
-        filter_consult.innerHTML = 'Ordem Alfabetica (Z-A)'
-    } else if(x=='3'){
-        let logreminders = await db.collection("reminders")
-        .orderBy("data", "asc").get()
-        for (doc of logreminders.docs) {
-            reminders.push({
-                id:doc.id,
-                title: doc.data().title,
-                text: doc.data().text,
-                data: doc.data().data,
-                dia: doc.data().dia,
-            })
-        }
-        filter_consult.innerHTML = 'Mais Recente'
-    } else if(x=='4'){
-        let logreminders = await db.collection("reminders")
-        .orderBy("data", "desc").get()
-        for (doc of logreminders.docs) {
-            reminders.push({
-                id:doc.id,
-                title: doc.data().title,
-                text: doc.data().text,
-                data: doc.data().data,
-                dia: doc.data().dia,
-            })
-        }
-        filter_consult.innerHTML = 'Mais Antigo'
+    db_read = await db
+    .collection('reminders')
+    .where('uid', '==', id)
+    .get()
+    for (doc of db_read.docs) {
+        reminders.push({
+            id: doc.id,
+            title: doc.data().title,
+            text: doc.data().text,
+            calendar: doc.data().calendar,
+            dia: doc.data().dia,
+            calendar_month: doc.data().calendar_month,
+            data: doc.data().data,
+        })
+    }
+    switch (filter_id) {
+        case '1':
+            reminders = reminders.sort(
+                function (a, b) {
+                    return (a.title < b.title) ? 1 : ((b.title < a.title) ? -1 : 0);
+                }
+            );
+            filter_consult.innerHTML = 'Filtrar por Ordem Alfabetica ⇓'
+            break
+        case '2':
+            reminders = reminders.sort(
+                function (a, b) {
+                    return (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0);
+                }
+            );
+            filter_consult.innerHTML = 'Filtrar por Ordem Alfabetica ⇑'
+            break
+        case '3':
+            reminders = reminders.sort(
+                function (a, b) {
+                    return (a.data < b.data) ? 1 : ((b.data < a.data) ? -1 : 0);
+                }
+            );
+            filter_consult.innerHTML = 'Filtrar por Mais Recente'
+            break
+        case '4':
+            reminders = reminders.sort(
+                function (a, b) {
+                    return (a.data > b.data) ? 1 : ((b.data > a.data) ? -1 : 0);
+                }
+            );
+            filter_consult.innerHTML = 'Filtrar por Mais Antigo'
+            break
+        case '5':
+            filter_consult.innerHTML = 'sem funcionamento'
+            break
+        case '6':
+            filter_consult.innerHTML = 'sem funcionamento'
+            break
+        default:
+            reminders = reminders.sort(
+                function (a, b) {
+                    return (a.data < b.data) ? 1 : ((b.data < a.data) ? -1 : 0);
+                }
+            );
+            filter_consult.innerHTML = 'Cadastradas Recentemente'
     }
     renderReminders()
 }
@@ -115,7 +133,10 @@ async function addReminder(){
     const title = document.getElementById('title_reminder').value;
     const text = document.getElementById('text_reminder').value;
     const dia = document.getElementById('day_reminder').value;
-    const data = document.getElementById('data_reminder').value;
+    let calendar = document.getElementById('data_reminder').value;
+    const calendar_2 = calendar.split('-')
+    const fitlerday = parseInt(calendar_2[0]) 
+    const fitlermonth = parseInt(calendar_2[1]) 
     if (title && title != ' ' && text && text != ' ' && dia && dia != ' '){
         // carregando nova tarefa
         const newreminder = document.createElement('li');
@@ -131,24 +152,27 @@ async function addReminder(){
             title: title,
             text: text,
             dia: dia,
-            data: data,
+            calendar: calendar,
+            calendar_day: fitlerday,
+            calendar_month: fitlermonth,
+            data: current_data,
+            uid: firebase.auth().currentUser.uid
         })
-        readReminders()
+        readReminders(filter_id, id_user)
     }else{
         swal.fire({
           icon: "error",
-          title: "A Tarefa está vazia",
+          title: "O Lembrete está vazio",
         })
     }
 }
 
 async function deleteReminder(id) {
     await db.collection("reminders").doc(id).delete()
-    readReminders()
+    readReminders(filter_id, id_user)
 }
 
 window.onload = function(){
-    getUser()
-    readReminders()
+    getUser('readReminders')
 }
 
