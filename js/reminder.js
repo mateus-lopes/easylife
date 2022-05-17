@@ -85,7 +85,7 @@ async function readReminders(x, id){
                     return (a.title < b.title) ? 1 : ((b.title < a.title) ? -1 : 0);
                 }
             );
-            filter_consult.innerHTML = 'Filtrar por Ordem Alfabetica ⇓'
+            filter_consult.innerHTML = 'Ordem Alfabetica ⇓'
             break
         case '2':
             reminders = reminders.sort(
@@ -93,7 +93,7 @@ async function readReminders(x, id){
                     return (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0);
                 }
             );
-            filter_consult.innerHTML = 'Filtrar por Ordem Alfabetica ⇑'
+            filter_consult.innerHTML = 'Ordem Alfabetica ⇑'
             break
         case '3':
             reminders = reminders.sort(
@@ -101,7 +101,7 @@ async function readReminders(x, id){
                     return (a.data < b.data) ? 1 : ((b.data < a.data) ? -1 : 0);
                 }
             );
-            filter_consult.innerHTML = 'Filtrar por Mais Recente'
+            filter_consult.innerHTML = 'Mais Recente'
             break
         case '4':
             reminders = reminders.sort(
@@ -109,7 +109,7 @@ async function readReminders(x, id){
                     return (a.data > b.data) ? 1 : ((b.data > a.data) ? -1 : 0);
                 }
             );
-            filter_consult.innerHTML = 'Filtrar por Mais Antigo'
+            filter_consult.innerHTML = 'Mais Antigo'
             break
         case '5':
             filter_consult.innerHTML = 'sem funcionamento'
@@ -123,7 +123,7 @@ async function readReminders(x, id){
                     return (a.data < b.data) ? 1 : ((b.data < a.data) ? -1 : 0);
                 }
             );
-            filter_consult.innerHTML = 'Cadastradas Recentemente'
+            filter_consult.innerHTML = 'Mais Recente'
     }
     renderReminders()
 }
@@ -162,7 +162,7 @@ async function addReminder(){
     }else{
         swal.fire({
           icon: "error",
-          title: "O Lembrete está vazio",
+          text: "O Lembrete está vazio",
         })
     }
 }

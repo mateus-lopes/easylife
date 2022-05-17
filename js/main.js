@@ -2,22 +2,16 @@
 async function getUser(x, y) {
     firebase.auth().onAuthStateChanged((user) => {
         if (!user) {
-            swal.fire({
-            icon: "error",
-            title: "Conexão Expirada",
-            })
-            .then(() => {
             setTimeout(() => {
                 window.location.replace("login_profile.html")
             }, 500)
-            })
         } else {
             setTimeout(function() {
                 $("body").addClass("fadeIn")
-            });
+            }, 500)
             setTimeout(function() {
                 $(".loading").addClass("hidden")
-            });
+            }, 500);
             console.log(y)
             switch (x) {
                 case 'readTasks':

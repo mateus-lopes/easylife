@@ -56,7 +56,7 @@ async function readTasks(x, id){
                     return (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0);
                 }
             );
-            textFilter.innerHTML = 'Filtrar por Ordem Alfabetica ⇓'
+            textFilter.innerHTML = 'Ordem Alfabetica ⇓'
             break
         case '2':
             tasks = tasks.sort(
@@ -64,7 +64,7 @@ async function readTasks(x, id){
                     return (a.title < b.title) ? 1 : ((b.title < a.title) ? -1 : 0);
                 }
             );
-            textFilter.innerHTML = 'Filtrar por Ordem Alfabetica ⇑'
+            textFilter.innerHTML = 'Ordem Alfabetica ⇑'
             break
         case '3':
             tasks = tasks.sort(
@@ -72,7 +72,7 @@ async function readTasks(x, id){
                     return (a.data < b.data) ? 1 : ((b.data < a.data) ? -1 : 0);
                 }
             );
-            textFilter.innerHTML = 'Filtrar por Mais Recente'
+            textFilter.innerHTML = 'Mais Recente'
             break
         case '4':
             tasks = tasks.sort(
@@ -80,7 +80,7 @@ async function readTasks(x, id){
                     return (a.data > b.data) ? 1 : ((b.data > a.data) ? -1 : 0);
                 }
             );
-            textFilter.innerHTML = 'Filtrar por Mais Antigo'
+            textFilter.innerHTML = 'Mais Antigo'
             break
         default:
             tasks = tasks.sort(
@@ -88,7 +88,7 @@ async function readTasks(x, id){
                     return (a.data < b.data) ? 1 : ((b.data < a.data) ? -1 : 0);
                 }
             );
-            textFilter.innerHTML = 'Cadastradas Recentemente'
+            textFilter.innerHTML = 'Mais Recente'
     }
     renderTasks()
 }
@@ -118,7 +118,7 @@ async function addTask(){
     }else{
         swal.fire({
           icon: "error",
-          title: "A Tarefa está vazia",
+          text: "A Tarefa está vazia",
         })
     }
 }

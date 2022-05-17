@@ -35,7 +35,7 @@
     <!-- header -->
     <header>
         <!-- header_logo -->
-        <div class="container-fluid mb-4 bg-white shadow-css">
+        <div class="container-fluid mb-4 mb-lg-0 shadow bg-body rounded">
             <a href="index.html">
                 <img 
                     src="img/logo_164x50.png" 
@@ -47,9 +47,9 @@
             </a>
         </div><!-- /header_logo -->
         <!-- header_nav -->
-        <div class="container">
+        <div class="container-fluid p-0">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 p-lg-0">
                     <nav>
                         <!-- nav_icons -->
                         <ul class="navbar-icons">
@@ -60,6 +60,9 @@
                                     alt=""
                                     class="icon-svg"
                                     />
+                                    <span class="d-none d-lg-inline text-icon">
+                                        Tarefas         
+                                    </span>
                                 </a>
                             </li>
                             <li class="square-grid">
@@ -69,6 +72,9 @@
                                     alt=""
                                     class="icon-svg"
                                     />
+                                    <span class="d-none d-lg-inline text-icon">
+                                        Notas
+                                    </span>
                                 </a>
                             </li>
                             <li class="square-grid">
@@ -78,6 +84,9 @@
                                     alt=""
                                     class="icon-svg"
                                     />
+                                    <span class="d-none d-lg-inline text-icon">
+                                        Lembretes
+                                    </span>
                                 </a>
                             </li>
                             <li class="square-grid"> 
@@ -87,32 +96,37 @@
                                 alt=""
                                 class="icon-svg"
                                 />
+                                <span class="d-none d-lg-inline text-icon">
+                                    Menu
+                                </span>
                             </a>
                         </li>
                     </ul><!-- /nav_icons -->
                     <!-- nav_content -->
-                    <ul id="content_nav" class="navbar bigOut">
-                        <li class="nav-title">
-                            <p class="text-light p-0 m-0">Menu</p>
-                        </li>
-                        <li class="nav-item">
-                            <a class="text-dark" href="profile.html">Perfil</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- dashboard -->
-                            <a class="text-dark" href="login_profile.html">Suporte</a>
-                        </li>
-                            <li class="nav-item br-bottom">
-                                <a onclick="logOut()" class="text-dark">Sair</a>
+                    <div class="container">
+                        <ul id="content_nav" class="navbar bigOut">
+                            <li class="nav-title">
+                                <p class="text-light p-0 m-0">Menu</p>
                             </li>
-                        </ul>
+                            <li class="nav-item">
+                                <a class="text-dark" href="profile.html">Perfil</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- dashboard -->
+                                <a class="text-dark" href="suporte.html">Suporte</a>
+                            </li>
+                                <li class="nav-item br-bottom">
+                                    <a onclick="logOut()" class="text-dark">Sair</a>
+                                </li>
+                            </ul>
+                    </div>
                     </nav><!--/nav_content -->
                 </div><!-- /header_nav -->
             </div>
         </div>
     </header><!-- /header -->
     <!-- main -->
-    <main class="mb-5 px-4 pb-4">
+    <main class="mb-3 px-4">
         <div class="container">
             <!-- title_main -->
             <h1 class="pt-2 pb-2">Tarefas:</h1>
@@ -163,21 +177,11 @@
                 <!-- /btn_filtro -->
             <!-- ul_taskList -->
             <ul id="taskList" class="list-group task-ul">
-                <li class="task-li task-div">
-                    Carrengando...
-                </li>
+                Carrengando...
             </ul><!-- /ul_taskList -->
         </div>
     </main><!-- /main -->
-    <!-- footer -->
-    <footer class="bg-blue mt-5">
-        <!-- div_logoFooter -->
-        <div class="container p-3 p-sm-4">
-            <a href="#">
-                <img src="img/Group 45.png" class="img-codeShark" alt="" srcset="">
-            </a>    
-        </div><!-- /div_logoFooter -->
-    </footer><!-- /footer -->
+    
     <!-- bootstrap -->
     <script
         src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

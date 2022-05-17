@@ -156,5 +156,11 @@ async function signUp(){
 }
 
 function logOut() {
-    firebase.auth().signOut()
+    swal.fire({
+    icon: "error",
+    text: "Desconectado",
+    })
+    .then(() => {
+        firebase.auth().signOut()
+    })
 }
