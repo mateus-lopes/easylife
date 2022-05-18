@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favion -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <!-- css -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -49,7 +55,7 @@
         <!-- header_nav -->
         <div class="container-fluid p-0">
             <div class="row">
-                <div class="col-12 p-lg-0">
+                <div class="px-0 col-12 p-lg-0">
                     <nav>
                         <!-- nav_icons -->
                         <ul class="navbar-icons">
@@ -113,7 +119,7 @@
                             </li>
                             <li class="nav-item">
                                 <!-- dashboard -->
-                                <a class="text-dark" href="login_profile.html">Suporte</a>
+                                <a class="text-dark" href="suporte.html">Suporte</a>
                             </li>
                                 <li class="nav-item br-bottom">
                                     <a onclick="logOut()" class="text-dark">Sair</a>
@@ -127,20 +133,94 @@
     </header><!-- /header -->
     <!-- main -->
     <main class="mb-3 px-4">
-        <div class="container">
+        <div class="container mb-5">
             <!-- title_main -->
-            <h1 class="pt-2 pb-2">Suporte:</h1>
+            <h1 class="pt-2 pb-2">Perguntas Frequentes</h1>
             <hr class="mt-2"><!-- /title_main -->
-            
+            <p>
+                Consulte as perguntas mais frequentes para tirar suas dúvidas sobre sua conta.
+            </p>
+            <div class="row">
+                <div class="px-0 col-12">
+                    <button class="btn btn-block btn-border btn-blue py-3 px-4 text-left" style="border-radius: 15px 15px 0 0;" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                        Como funcionam as Tarefas?
+                    </button>
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                            Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+                <div class="px-0 col-12">
+                    <button class="btn btn-block btn-border btn-blue py-3 px-4 text-left" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">
+                        Como funcionam as de Notas?
+                    </button>
+                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card card-body">
+                            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+                <div class="px-0 col-12">
+                    <button class="btn btn-block btn-border btn-blue py-3 px-4 text-left" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">
+                        Como funcionam os Lembretes?
+                    </button>
+                    <div class="collapse multi-collapse" id="multiCollapseExample3">
+                        <div class="card card-body">
+                            Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+                <div class="px-0 col-12">
+                    <button class="btn btn-block btn-border btn-blue py-3 px-4 text-left" type="button" data-toggle="collapse" data-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">
+                        Tratamento de dados pessoais
+                    </button>
+                    <div class="collapse multi-collapse" id="multiCollapseExample4">
+                        <div class="card card-body">
+                            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+                <div class="px-0 col-12">
+                    <button class="btn btn-block btn-border btn-blue py-3 px-4 text-left" type="button" data-toggle="collapse" data-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5">
+                        Mudei o e-mail, consigo alterar no meu cadastro?
+                    </button>
+                    <div class="collapse multi-collapse" id="multiCollapseExample5">
+                        <div class="card card-body">
+                            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+                <div class="px-0 col-12">
+                    <button class="btn btn-block btn-border btn-blue py-3 px-4 text-left" style="border-radius: 0 0 15px 15px;" type="button" data-toggle="collapse" data-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample6">
+                        Recuperação de Senha
+                    </button>
+                    <div class="collapse multi-collapse" id="multiCollapseExample6">
+                        <div class="card card-body">
+                            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="px-0 col-12 my-1 d-grid gap-2">
+                    <a href="suporte_form.html" class="btn btn-info btn-block py-2">
+                        Ainda está com Dúvidas?
+                    </a>
+                </div>
+            </div>
         </div>
     </main><!-- /main -->
     <!-- footer -->
-    <footer class="bg-rox p-relative">
+    <footer class="p-relative mt-2">
         <!-- div_logoFooter -->
-        <div class="container p-3 my-lg-0">
+        <div class="container text-center p-3 p-sm-4 mb-0">
             <a href="#">
-                <img src="img/logo_empresa(w).png" class="img-codeShark" alt="" srcset="">
-            </a>    
+                <img src="img/logo_empresa.png" class="img-codeShark mb-2" alt="" srcset="">
+            </a>
+            <small class="text-muted">
+                EasyLife © 2007  |  Todos os direitos reservados.
+            </small>    
         </div><!-- /div_logoFooter -->
     </footer><!-- /footer -->
     <!-- bootstrap -->

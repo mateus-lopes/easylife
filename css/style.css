@@ -54,8 +54,8 @@ b {
     width: 180px;
     display: block;
     opacity: 0;
-    animation: bounce 3.1s alternate;
-    -webkit-animation: bounce 3.1s alternate;
+    animation: bounce 3.5s alternate;
+    -webkit-animation: bounce 3.5s alternate;
 }
 
 @keyframes bounce {
@@ -233,7 +233,7 @@ footer {
 
 
 .bg-blue {
-    background-color:#00A0E9;
+    background-color:#005897;
 }
 
 .img-codeShark {
@@ -256,7 +256,7 @@ footer {
     justify-content: center;
     align-items: center;
     opacity: 1;
-    animation: fadeIn .5s;
+    animation: fadeIn .3s;
 }
 
 .p-relative {
@@ -307,7 +307,7 @@ footer {
 }
 
 .btn-blue {
-    background-color: #00A0E9;
+    background-color: #005897;
     color: #fff;
 }
 
@@ -318,6 +318,14 @@ footer {
 .btn-addTask {
     padding: 0 1em;
     border-radius: 0 14.4px 14.4px 0;
+}
+
+.btn-border {
+    border-radius: 0;
+}
+
+.btn-border:active, .btn-border:focus {
+    box-shadow: none;
 }
 
 .form-control {
@@ -343,7 +351,7 @@ footer {
 /* option */
 
 option:hover {
-    background-color: #00A0E9 !important;
+    background-color: #005897 !important;
     color: #fff;
     padding:45em;
 }
@@ -360,17 +368,22 @@ option:hover {
     background-repeat: no-repeat;
 }
 
+#content_nav {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
 @media screen and (min-width:375px){
     .square-grid{
-        width:4.8em;
-        height:4.8em;
+        width:5em;
+        height:5em;
     }
 }
 
 @media screen and (min-width:425px){
     .square-grid{
-        width:5em;
-        height:5em;
+        width:5.5em;
+        height:5.5em;
     }
 }
 
@@ -378,6 +391,10 @@ option:hover {
     .square-grid{
         width:10em;
         height:5em;
+    }
+    #content_nav {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -392,12 +409,6 @@ option:hover {
     .container {
         width: 70%;
         margin: 0 auto 2em;
-    }
-
-    .p-relative {
-        position: absolute !important;
-        bottom:0;
-        left: 0;
     }
 
 }

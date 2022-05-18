@@ -8,10 +8,10 @@ async function getUser(x, y) {
         } else {
             setTimeout(function() {
                 $("body").addClass("fadeIn")
-            }, 500)
+            })
             setTimeout(function() {
                 $(".loading").addClass("hidden")
-            }, 500);
+            });
             console.log(y)
             switch (x) {
                 case 'readTasks':
