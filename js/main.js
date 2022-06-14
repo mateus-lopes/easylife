@@ -1,24 +1,31 @@
 // LOGIN CONFIG
-async function getUser() {
+async function getUser(x, y) {
     firebase.auth().onAuthStateChanged((user) => {
         if (!user) {
-            swal.fire({
-            icon: "error",
-            title: "Conexão Expirada",
-            })
-            .then(() => {
             setTimeout(() => {
                 window.location.replace("login_profile.html")
             }, 500)
-            })
         } else {
-            currentUser.uid = user.uid
             setTimeout(function() {
                 $("body").addClass("fadeIn")
-            });
+            })
             setTimeout(function() {
                 $(".loading").addClass("hidden")
             });
+            console.log(y)
+            switch (x) {
+                case 'readTasks':
+                    readTasks(y, user.uid)
+                    break
+                case 'readReminders':
+                    readReminders(y, user.uid)
+                    break
+                case '3':
+                    notes(y, user.uid)
+                    break
+                default:
+                    return false;
+            }
         }
     })
 }

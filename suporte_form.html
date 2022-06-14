@@ -55,7 +55,7 @@
         <!-- header_nav -->
         <div class="container-fluid p-0">
             <div class="row">
-                <div class="col-12 p-lg-0">
+                <div class="px-0 col-12 p-lg-0">
                     <nav>
                         <!-- nav_icons -->
                         <ul class="navbar-icons">
@@ -98,82 +98,67 @@
                             <li class="square-grid"> 
                                 <a id="nav_id" href="#">
                                     <img 
-                                    src="img/icon/Setting.svg" 
-                                    alt=""
-                                    class="icon-svg"
-                                    />
-                                    <span class="d-none d-lg-inline text-icon">
-                                        Menu
-                                    </span>
-                                </a>
+                                src="img/icon/Setting.svg" 
+                                alt=""
+                                class="icon-svg"
+                                />
+                                <span class="d-none d-lg-inline text-icon">
+                                    Menu
+                                </span>
+                            </a>
+                        </li>
+                    </ul><!-- /nav_icons -->
+                    <!-- nav_content -->
+                    <div class="container">
+                        <ul id="content_nav" class="navbar bigOut">
+                            <li class="nav-title">
+                                <p class="text-light p-0 m-0">Menu</p>
                             </li>
-                        </ul><!-- /nav_icons -->
-                        <!-- nav_content -->
-                        <div class="container">
-                            <ul id="content_nav" class="navbar bigOut">
-                                <li class="nav-title">
-                                    <p class="text-light p-0 m-0">Menu</p>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="text-dark" href="profile.html">Perfil</a>
-                                </li>
-                                <li class="nav-item">
-                                    <!-- dashboard -->
-                                    <a class="text-dark" href="suporte.html">Suporte</a>
-                                </li>
+                            <li class="nav-item">
+                                <a class="text-dark" href="profile.html">Perfil</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- dashboard -->
+                                <a class="text-dark" href="suporte.html">Suporte</a>
+                            </li>
                                 <li class="nav-item br-bottom">
                                     <a onclick="logOut()" class="text-dark">Sair</a>
                                 </li>
                             </ul>
-                        </div>
+                    </div>
                     </nav><!--/nav_content -->
                 </div><!-- /header_nav -->
             </div>
         </div>
     </header><!-- /header -->
     <!-- main -->
-    <main class="px-4 pb-2">
-        <div class="container">
+    <main class="mb-3 px-4">
+        <div class="container mb-5">
             <!-- title_main -->
-            <h1 class="pt-2 pb-2">Perfil:</h1>
+            <h1 class="pt-2 pb-2">Formulario de Contato:</h1>
             <hr class="mt-2"><!-- /title_main -->
+            <p>
+                Preencha corretamente o formulario de dúvidas. Sua menssagem será respondida em pelo menos 1 semana.
+            </p>
             <div class="row">
-                <div class="col-4 col-md-3">
-                    <img onclick="img_profile()" id="img_profile" class="img-fluid rounded-circle w-100" src="img/img-profile.png" alt="">
-                </div>
-                <div class="col-8 col-md-9">
-                    <label class="mt-3" for="name_profile">Nome Completo</label>
-                    <input id="name_profile" class="form-control pl-3" type="text" name="name_profile" placeholder="Carregando...">
-                    <div class="d-none d-lg-block">
-                        <label class="mt-3" for="email_profile">E-mail</label>
-                        <input id="email_profile2" class="form-control pl-3" type="email" name="email_profile" placeholder="Indisponivel - Error">
-                        <label class="mt-3" for="password_profile">Senha</label>
-                        <input id="password_profile2" class="form-control pl-3" type="password" name="password_profile" placeholder="Indisponivel - Error">
-                    </div>
-                </div>
-            </div>
-            <div class="row d-lg-none">
-                <div class="col-12">
+                <div class="px-0 col-12">
                     <div class="form-group">
                         <label class="mt-2" for="email_profile">E-mail</label>
-                        <input id="email_profile" class="form-control pl-3" type="email" name="email_profile" placeholder="Carregando...">
-                        <label class="mt-2" for="password_profile">Senha</label>
-                        <input id="password_profile" class="form-control pl-3" type="password" name="password_profile" placeholder="Carregando...">
+                        <input id="email_profile" class="form-control pl-3" type="email" name="email_profile" placeholder="Seu Email">
+                        <label class="mt-2" for="textarea">Assunto</label>
+                        <textarea id="textarea" class="form-control p-3 pt-2" name="" rows="6" placeholder="Digite Aqui"></textarea>
                     </div>
                 </div>
-                
             </div>
-        </div>
-        <div class="container my-3 mt-lg-5 mb-lg-0">
             <div class="row">
-                <div class="col-6 pl-0">
-                    <button onclick="saveProfile()" class="btn btn-blue btn-block py-2">
-                        Atualizar
-                    </button>
+                <div class="col-6 pl-0 my-1">
+                    <a href="suporte.html" class="btn btn-info btn-block py-2">
+                        Voltar
+                    </a>
                 </div>
-                <div class="col-6 pr-0">
-                    <button onclick="logOut()" class="btn btn-danger btn-block py-2">
-                        Sair
+                <div class="col-6 pr-0 my-1">
+                    <button onclick="saveProfile()" class="btn btn-blue btn-block py-2">
+                        Enviar
                     </button>
                 </div>
             </div>
@@ -182,7 +167,7 @@
     <!-- footer -->
     <footer class="p-relative mt-2">
         <!-- div_logoFooter -->
-        <div class="container text-center p-3 p-sm-4 mb-0 mt-4">
+        <div class="container text-center p-3 p-sm-4 mb-0">
             <a href="#">
                 <img src="img/logo_empresa.png" class="img-codeShark mb-2" alt="" srcset="">
             </a>
@@ -208,14 +193,31 @@
         crossorigin="anonymous"
     ></script>
     <!-- Alert bonito -->
-    <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+    <script 
+        src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"
+    ></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-
+    <script 
+        src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"
+    ></script>
+    <script 
+        src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"
+    ></script>
+    <script 
+        src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"
+    ></script>
     <!-- scripts -->
-    <script src="js/init.js"></script>
-    <script src="js/profile.js"></script>
+    <script
+        src="js/init.js"
+    ></script>
+    <script
+        src="js/auth.js"
+    ></script>
+    <script
+        src="js/main.js"
+    ></script>
+    <script>
+        getUser()
+    </script>
 </body>
 </html>

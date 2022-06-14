@@ -1,5 +1,8 @@
-let tasks = []
-let textFilter = document.getElementById('text_filter')
+let tasks = [];
+let db_read;
+let id_user;
+let filter_id = document.getElementById('filter_id').innerText;
+let textFilter = document.getElementById('text_filter');
 
 function createButtonDel(task){
     const newTask_del = document.createElement('a');
@@ -30,48 +33,62 @@ function renderTasks(){
     }
 }
 
-async function readTasks(x){
+async function readTasks(x, id){
+    if (x){filter_id = x}
+    if (id){id_user = id}
     tasks = []
-    if(!x || x=='1'){
-        let logTasks = await db.collection('tasks')
-        .orderBy("title", "asc").get()
-        for (doc of logTasks.docs) {
-            tasks.push({
-                id: doc.id,
-                title: doc.data().title
-            })
-        }
-        textFilter.innerHTML = 'Ordem Alfabetica (A-Z)'
-    } else if(x=='2'){
-        let logTasks = await db.collection("tasks")
-        .orderBy("title", "desc").get()
-        for (doc of logTasks.docs) {
-            tasks.push({
-                id: doc.id,
-                title: doc.data().title
-            })
-        }
-        textFilter.innerHTML = 'Ordem Alfabetica (Z-A)'
-    } else if(x=='3'){
-        let logTasks = await db.collection("tasks")
-        .orderBy("data", "desc").get()
-        for (doc of logTasks.docs) {
-            tasks.push({
-                id: doc.id,
-                title: doc.data().title
-            })
-        }
-        textFilter.innerHTML = 'Mais Recente'
-    } else if(x=='4'){
-        let logTasks = await db.collection("tasks")
-        .orderBy("data", "asc").get()
-        for (doc of logTasks.docs) {
-            tasks.push({
-                id: doc.id,
-                title: doc.data().title
-            })
-        }
-        textFilter.innerHTML = 'Mais Antigo'
+    db_read = await db
+    .collection('tasks')
+    .where('uid', '==', id)
+    .get()
+    for (doc of db_read.docs) {
+        console.log(doc.data().data.nanoseconds)
+        tasks.push({
+            id: doc.id,
+            title: doc.data().title,
+            data: doc.data().data,
+        })
+    }
+    switch (filter_id) {
+        case '1':
+            tasks = tasks.sort(
+                function (a, b) {
+                    return (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0);
+                }
+            );
+            textFilter.innerHTML = 'Ordem Alfabetica ⇓'
+            break
+        case '2':
+            tasks = tasks.sort(
+                function (a, b) {
+                    return (a.title < b.title) ? 1 : ((b.title < a.title) ? -1 : 0);
+                }
+            );
+            textFilter.innerHTML = 'Ordem Alfabetica ⇑'
+            break
+        case '3':
+            tasks = tasks.sort(
+                function (a, b) {
+                    return (a.data < b.data) ? 1 : ((b.data < a.data) ? -1 : 0);
+                }
+            );
+            textFilter.innerHTML = 'Mais Recente'
+            break
+        case '4':
+            tasks = tasks.sort(
+                function (a, b) {
+                    return (a.data > b.data) ? 1 : ((b.data > a.data) ? -1 : 0);
+                }
+            );
+            textFilter.innerHTML = 'Mais Antigo'
+            break
+        default:
+            tasks = tasks.sort(
+                function (a, b) {
+                    return (a.data < b.data) ? 1 : ((b.data < a.data) ? -1 : 0);
+                }
+            );
+            textFilter.innerHTML = 'Mais Recente'
     }
     renderTasks()
 }
@@ -91,23 +108,24 @@ async function addTask(){
         newTask_content.appendChild(document.createTextNode('Adicionando na nuvem...'))
         taskList.appendChild(newTask)
         // data
-        const data = new Date();
+        const data_origin = new Date();
         await db.collection('tasks').add({
             title: title,
-            data: data,
+            data: data_origin,
+            uid: firebase.auth().currentUser.uid
         })
-        readTasks()
+        readTasks(filter_id, id_user)
     }else{
         swal.fire({
           icon: "error",
-          title: "A Tarefa está vazia",
+          text: "A Tarefa está vazia",
         })
     }
 }
 
 async function deleteTask(id) {
     await db.collection("tasks").doc(id).delete()
-    readTasks()
+    readTasks(filter_id, id_user)
 }
 
 document.addEventListener('keypress', function(e){
@@ -117,6 +135,6 @@ document.addEventListener('keypress', function(e){
 }, false);
 
 window.onload = function(){
-    getUser()
-    readTasks()
+    getUser('readTasks')
 }
+
