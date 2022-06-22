@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,7 +9,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
+     
     <!-- css -->
     <link
       rel="stylesheet"
@@ -168,39 +169,11 @@
                                     id="data_reminder" 
                                     class="form-control">
                                 </div>
-                                <div class="px-0 col-6 p-2 pr-1">
+                                <div class="px-0 col-12 p-2 pr-1">
                                     <input 
                                     type="text" 
                                     id="title_reminder" 
-                                    class="form-control" placeholder="Escreva um Titulo">
-                                </div>
-                                <div class="px-0 col-6 p-2 pl-1">
-                                        <select id="day_reminder" class="form-control custom-select">
-                                            <option selected="">
-                                                Dia da semana
-                                            </option>
-                                            <option value="Segunda-Feira">
-                                                Segunda-Feira
-                                            </option>
-                                            <option value="Terça-Feira">
-                                                Terça-Feira
-                                            </option>
-                                            <option value="Quarta-Feira">
-                                                Quarta-Feira
-                                            </option>
-                                            <option value="Quinta-Feira">
-                                                Quinta-Feira
-                                            </option>
-                                            <option value="Sexta-Feira">
-                                                Sexta-Feira
-                                            </option>
-                                            <option value="Sabádo">
-                                                Sabádo
-                                            </option>
-                                            <option value="Domingo">
-                                                Domingo
-                                            </option>
-                                        </select>
+                                    class="form-control" placeholder="Titulo (opcional)">
                                 </div>
                                 <div class="px-0 col-12 p-2 pt-1">
                                     <textarea 
@@ -268,6 +241,52 @@
                         Carrengando...
                 </li>
             </ul><!-- /ul_reminderList -->
+            <!-- modal_content -->
+            <div class="modal mt-5 pt-1 fade" id="reminder_edit" tabindex="-1" aria-labelledby="reminder_modal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="reminder_modal">
+                                Edição de Tarefa
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mx-auto">
+                                <div class="px-0 col-12 p-2 pr-1">
+                                    <label for="title_saveReminder">Titulo</label>
+                                    <input 
+                                    type="text" 
+                                    id="title_saveReminder" 
+                                    class="form-control" placeholder="Escreva um Titulo">
+                                </div>
+                                <div class="px-0 col-12 p-2 pt-1">
+                                    <label for="text_saveReminder">Texto</label>
+                                    <textarea 
+                                        type="text" 
+                                        id="text_saveReminder" 
+                                        name="text-lem" 
+                                        class="form-control w-100 p-3" 
+                                        rows="3" 
+                                        placeholder="Carregando.."
+                                    ></textarea>
+                                </div>
+                            </div>
+                            <input id="save_idReminder" value="id-save" class="d-none" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                Fechar
+                            </button>
+                            <button type="button" class="btn btn-blue" data-dismiss="modal" onclick="saveReminder()">
+                                Atualizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /modal_content -->
         </div>
     </main><!-- /main -->
     <!-- bootstrap -->

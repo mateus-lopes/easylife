@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,7 +9,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
+     
     <!-- css -->
     <link
       rel="stylesheet"
@@ -138,7 +139,7 @@
             <h1 class="pt-2 pb-2">Tarefas:</h1>
             <hr class="mt-2"><!-- /title_main -->
             <!-- btn_addTask -->
-            <div class="input-group w-100 my-3">
+            <div class="input-group w-100 mt-3 mb-2">
                 <input id="new_task" type="text" class="form-control" placeholder="Digite uma nova tarefa" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <div class="input-group-append">
                     <a id="btn_addTask" class="btn-addTask btn-blue d-flex" onclick="addTask()" href="#" type="button">
@@ -151,16 +152,22 @@
                 </div>
             </div><!-- /btn_addTask -->
             <div class="row pb-2">
-                <div class="px-0 col-8 pl-0 text-left">
+                <div class="px-0 col-5 pt-2 text-left">
                     <span class="invisible" id="filter_id"> 1</span>
                     <span id="text_filter" class="pl-0 btn btn-sm text-success border-bottom">
                         Carrengando...
                     </span>
                 </div>
-                <div class="px-0 col-4 px-0 text-right">
+                <div class="px-0 col-7 px-0 text-right">
                     <!-- btn_filtro -->
                     <div class="dropdown ml-auto mr-0">
-                        <button type="button" class="btn btn-sm btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button 
+                            type="button" 
+                            class="d-inline-block btn btn-sm btn-success dropdown-toggle" 
+                            data-toggle="dropdown" 
+                            aria-haspopup="true" 
+                            aria-expanded="false"
+                        >
                             Filtrar
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
@@ -177,11 +184,49 @@
                                 Mais Antigo
                             </a>
                         </div>
+                        <a href="task_finish.html" class="my-2 d-inline-block btn btn-sm btn-blue">
+                            Concluidas
+                        </a>
                     </div>
                 </div>
-            </div>
-                <!-- /btn_filtro -->
-            <!-- ul_taskList -->
+            </div><!-- /btn_filtro -->
+            <!-- modal_content -->
+            <div class="modal mt-5 pt-1 fade" id="teste" tabindex="-1" aria-labelledby="teste_modal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="teste_modal">
+                                Edição de Tarefa
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mx-auto">
+                                <div class="px-0 col-12 task-li task-div p-2 pr-1">
+                                    <input 
+                                        type="text" 
+                                        id="edit_task" 
+                                        class="form-control" 
+                                        placeholder="Carregando..."
+                                    />
+                                    <span class="icon-edit mr-2"></span>
+                                </div>
+                                <input id="save_idTask" value="id-save" class="d-none" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                Fechar
+                            </button>
+                            <button type="button" class="btn btn-blue" data-dismiss="modal" onclick="saveTask()">
+                                Atualizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /modal_content -->
             <ul id="taskList" class="list-group task-ul">
                 Carrengando...
             </ul><!-- /ul_taskList -->

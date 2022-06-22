@@ -72,7 +72,8 @@ async function recordUserInfo(currentUser){
         name: currentUser.name,
         email: currentUser.email,
         password: currentUser.password,
-        description: currentUser.description,
+        url_image: 'https://firebasestorage.googleapis.com/v0/b/easy-life-3db2d.appspot.com/o/images_user%2Fuser_default.jpg?alt=media&token=055684ac-4bff-4c44-ac27-7f10c27ef977',
+        data: new Date(),
     })	
 }
 
@@ -100,7 +101,8 @@ async function signUp(){
             currentUser.name  = name
             currentUser.email = email
             currentUser.password = password
-            currentUser.description = 'Você ainda não digitou uma descrição';
+            currentUser.url_image = 'https://firebasestorage.googleapis.com/v0/b/easy-life-3db2d.appspot.com/o/images_user%2Fuser_default.jpg?alt=media&token=055684ac-4bff-4c44-ac27-7f10c27ef977'
+            currentUser.data = new Date()
             recordUserInfo(currentUser)
             // acesso a nova conta
             swal.fire({     

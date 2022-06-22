@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
+     
     <!-- css -->
     <link
       rel="stylesheet"
@@ -104,7 +104,7 @@
                                     />
                                     <span class="d-none d-lg-inline text-icon">
                                         Menu
-                                        </span>
+                                    </span>
                                 </a>
                             </li>
                         </ul><!-- /nav_icons -->
@@ -139,18 +139,18 @@
             <hr class="mt-2"><!-- /title_main -->
             <!-- btn_addreminder -->
             <div class="input-group w-100 my-3">
-                <button class="btn btn-block btn-blue text-center">
-                    
+                <a href="new_note.html" class="btn btn-block btn-blue text-center">
+                    Criar Nota
                     <img 
                     src="img/icon/plus.svg" 
                     alt="Icone de Deletar"
                     class="icon"
                 />
-                </button>
+                </a>
             </div><!-- /btn_addreminder -->
             <div class="row pb-2">
                 <div class="px-0 col-8 pl-0 text-left">
-                    <span class="invisible" id="filter_id"> 1</span>
+                    <span class="invisible" id="filter_id">1</span>
                     <span id="filter_consult" class="pl-0 btn btn-sm text-success border-bottom ml-0 mr-2">
                         Carrengando...
                     </span>
@@ -162,32 +162,27 @@
                             Filtrar
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" onclick="getUser('readReminders', '1')" href="#">
+                            <a class="dropdown-item" onclick="getUser('readNotes', '1')" href="#">
                                 Ordem Alfabetica (A-Z)
                             </a>
-                            <a class="dropdown-item" onclick="getUser('readReminders', '2')" href="#">
+                            <a class="dropdown-item" onclick="getUser('readNotes', '2')" href="#">
                                 Ordem Alfabetica (Z-A)
                             </a>
-                            <a class="dropdown-item" onclick="getUser('readReminders', '3')" href="#">
+                            <a class="dropdown-item" onclick="getUser('readNotes', '3')" href="#">
                                 Mais Recente
                             </a>
-                            <a class="dropdown-item" onclick="getUser('readReminders', '4')" href="#">
+                            <a class="dropdown-item" onclick="getUser('readNotes', '4')" href="#">
                                 Mais Antigo
                             </a>
-                            <a class="dropdown-item" onclick="getUser('readReminders', '5')" href="#">
-                                Este Semana
-                            </a>
-                            <a class="dropdown-item" onclick="getUser('readReminders', '6')" href="#">
-                                Esta Mês
-                            </a>
-
                         </div>
                     </div>
                 </div>
             </div><!-- /btn_filtro -->
             <!-- ul_reminderList -->
-            <ul id="reminderList" class="list-group reminder-ul">
-                <!-- DESENVOLVENDO -->
+            <ul id="note_list" class="list-group reminder-ul">
+
+                <!-- LISTA LISTA LISTA -->
+            
             </ul><!-- /ul_reminderList -->
         </div>
     </main><!-- /main -->
@@ -220,6 +215,10 @@
     ></script>
     <script 
         src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"
+    ></script>
+    <script 
+        src="https://cdn.tiny.cloud/1/tnl3dlu45o29fcvycyqnal57y2m81udyg90yp4bohueekri2/tinymce/6/tinymce.min.js" 
+        referrerpolicy="origin"
     ></script>
     <!-- scripts -->
     <script

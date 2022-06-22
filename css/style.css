@@ -32,6 +32,10 @@ b {
     padding: 0
 }
 
+.w-85 {
+    width: 85%;
+}
+
 /* ------------------------ */
 /* ---------LOADING --------*/
 /* ------------------------ */
@@ -54,24 +58,29 @@ b {
     width: 180px;
     display: block;
     opacity: 0;
-    animation: bounce 3.5s alternate;
-    -webkit-animation: bounce 3.5s alternate;
+    animation: bounce 2s alternate;
+    -webkit-animation: bounce 2s alternate;
 }
 
 @keyframes bounce {
     0% {transform: translateY(0px);opacity: 1;}
     25% {transform: translateY(-15px);opacity: 1;}
-    50% {transform: translateY(0px);opacity: 1;}
-    75% {transform: translateY(-15px);opacity: 1;}
-    99% {transform: translateY(0);opacity: 1;}
-    100% {transform: translateY(-15px);opacity: 0;}
+    75% {transform: translateY(5px);opacity: 1;}
+    99% {opacity: 1;}
+    100% {opacity: 0;}
 }
 @-webkit-keyframes bounce {
-    0% {transform: translateY(0px);opacity: 1;}
+    /* 0% {transform: translateY(0px);opacity: 1;}
     25% {transform: translateY(-30px);opacity: 1;}
     50% {transform: translateY(0px);opacity: 1;}
     75% {transform: translateY(-30px);opacity: 1;}
     99% {transform: translateY(0px);opacity: 1;}
+    100% {opacity: 0;}
+    */
+    0% {transform: translateY(0px);opacity: 1;}
+    25% {transform: translateY(-15px);opacity: 1;}
+    75% {transform: translateY(15px);opacity: 1;}
+    99% {opacity: 1;}
     100% {opacity: 0;}
 }
 @keyframes fadeIn {
@@ -123,6 +132,13 @@ b {
     width: 1px;
     opacity: 0;
     animation: bigOut .8s;
+}
+
+.bigOutFast {
+    height: 1px;
+    width: 1px;
+    opacity: 0;
+    animation: bigOut .3s;
 }
 
 /* ------------------------ */
@@ -300,7 +316,61 @@ footer {
     width: 32px;
     height: 32px;
     background-image: url('../img/icon/Close\ Square.svg');
-    background-color: #F0F0F0;
+    background-color: transparent;
+    border-radius: 0 14.4px 14.4px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon-editTask {
+    padding: 1em;
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/icon/Tick\ Square\ -\ green.svg');
+    background-color: transparent;
+    border-radius: 0 14.4px 14.4px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: .1s all ease-in-out;
+}
+
+.icon-editTask2 {
+    padding: 1em;
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/icon/Arrow\ -\ Right\ Square.svg');
+    background-color: transparent;
+    border-radius: 0 14.4px 14.4px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon-finishTask {
+    padding: 1em;
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/icon/Tick\ Square\ bg-green.svg');
+    background-color: transparent;
+    border-radius: 0 14.4px 14.4px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: .1s all ease-in-out;
+}
+
+.task-finish {
+    text-decoration: line-through !important;
+}
+
+.task-finish:hover {
+    text-decoration: line-through !important;
+}
+
+.icon-edit {
+    padding: 1em;
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/icon/Edit.svg');
+    background-color: transparent;
     border-radius: 0 14.4px 14.4px 0;
     background-position: center;
     background-repeat: no-repeat;
@@ -356,16 +426,11 @@ option:hover {
     padding:45em;
 }
 
-.deleteReminder {
+.div-reminder {
     position: absolute;
     right: .5em;
     top: .5em;
-    padding: 1em;
-    width: 32px;
-    height: 32px;
-    background-image: url('../img/icon/Close\ Square.svg');
-    background-position: center;
-    background-repeat: no-repeat;
+    padding: .5em 0;
 }
 
 #content_nav {
@@ -373,10 +438,23 @@ option:hover {
     padding-right: 1em;
 }
 
+#img_profile {
+    display: none;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
 @media screen and (min-width:375px){
     .square-grid{
         width:5em;
         height:5em;
+    }
+    #img_profile {
+        display: inline-block;
+        opacity: 1;
+        width: 70%;
+        height: auto;
     }
 }
 
@@ -384,6 +462,12 @@ option:hover {
     .square-grid{
         width:5.5em;
         height:5.5em;
+    }
+    #text_filter {
+        display: inline-block;
+    }
+    #img_profile {
+        width: 85%;
     }
 }
 
@@ -395,6 +479,10 @@ option:hover {
     #content_nav {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .w-85 {
+        width:100%;
     }
 }
 
@@ -417,4 +505,14 @@ option:hover {
     .square-grid {
         height: 3.5em;
     }
+}
+
+.flex {
+    margin: em 0;
+}
+
+.absolute {
+    position: absolute;
+    right:0;
+    top: 0;
 }

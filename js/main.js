@@ -7,12 +7,9 @@ async function getUser(x, y) {
             }, 500)
         } else {
             setTimeout(function() {
-                $("body").addClass("fadeIn")
+                $(".loading").addClass("hidden");
+                $("body").addClass("fadeIn");
             })
-            setTimeout(function() {
-                $(".loading").addClass("hidden")
-            });
-            console.log(y)
             switch (x) {
                 case 'readTasks':
                     readTasks(y, user.uid)
@@ -20,8 +17,11 @@ async function getUser(x, y) {
                 case 'readReminders':
                     readReminders(y, user.uid)
                     break
-                case '3':
-                    notes(y, user.uid)
+                case 'readNotes':
+                    readNotes(y, user.uid)
+                    break
+                case 'editNote':
+                    infoNote(user.uid)
                     break
                 default:
                     return false;
@@ -39,6 +39,9 @@ function ToggleNav(toggle){
 nav = document.querySelector('#nav_id')
 nav_content = document.querySelector('#content_nav')
 nav.addEventListener('click', function(){ToggleNav(nav_content)})
+
+
+// upload_IMG - [ja fiz o getname da img]
 
 
 
