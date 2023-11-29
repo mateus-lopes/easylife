@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favion -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+     
+    <!-- css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link 
+        rel="stylesheet" 
+        href="css/style.css"
+    />
+    <title>Easy Life | Aproveite uma vida mais organizada com Easy Life</title>
+</head>
+<body class="bg-white">
+    <!-- loading -->
+    <div class="bg-white loading">
+        <span id="load_id">
+            <div class="loading-content">
+                <img 
+                    src="img/easy_500x500.png" 
+                    class="img-fluid" 
+                    alt="Logo Easy Life" 
+                    title="Easy Life" 
+                    srcset=""
+                />
+                <span class="b text-center d-block">Carregando...</span>
+            </div>
+        </span>
+    </div><!-- /loading -->
+    <!-- header -->
+    <header>
+        <!-- header_logo -->
+        <div class="container-fluid mb-4 mb-lg-0 shadow bg-body rounded">
+            <a href="index.html">
+                <img 
+                    src="img/logo_164x50.png" 
+                    class="img-fluid" 
+                    alt="Logo Easy Life" 
+                    title="Easy Life" 
+                    srcset=""
+                />
+            </a>
+        </div><!-- /header_logo -->
+        <!-- header_nav -->
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="px-0 col-12 p-lg-0">
+                    <nav>
+                        <!-- nav_icons -->
+                        <ul class="navbar-icons">
+                            <li class="square-grid">
+                                <a class="" href="index.html">
+                                    <img 
+                                    src="img/icon/Tick Square.svg" 
+                                    alt=""
+                                    class="icon-svg"
+                                    />
+                                    <span class="d-none d-lg-inline text-icon">
+                                        Tarefas         
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="square-grid">
+                                <a class="" href="notes.html">
+                                    <img 
+                                    src="img/icon/Document.svg" 
+                                    alt=""
+                                    class="icon-svg"
+                                    />
+                                    <span class="d-none d-lg-inline text-icon">
+                                        Notas
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="square-grid">
+                                <a class="" href="reminders.html">
+                                    <img 
+                                    src="img/icon/Calendar.svg" 
+                                    alt=""
+                                    class="icon-svg"
+                                    />
+                                    <span class="d-none d-lg-inline text-icon">
+                                        Lembretes
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="square-grid"> 
+                                <a id="nav_id" href="#">
+                                    <img 
+                                src="img/icon/Setting.svg" 
+                                alt=""
+                                class="icon-svg"
+                                />
+                                <span class="d-none d-lg-inline text-icon">
+                                    Menu
+                                </span>
+                            </a>
+                        </li>
+                    </ul><!-- /nav_icons -->
+                    <!-- nav_content -->
+                    <div class="container">
+                        <ul id="content_nav" class="navbar bigOut">
+                            <li class="nav-title">
+                                <p class="text-light p-0 m-0">Menu</p>
+                            </li>
+                            <li class="nav-item">
+                                <a class="text-dark" href="profile.html">Perfil</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- dashboard -->
+                                <a class="text-dark" href="suporte.html">Suporte</a>
+                            </li>
+                                <li class="nav-item br-bottom">
+                                    <a onclick="logOut()" class="text-dark">Sair</a>
+                                </li>
+                            </ul>
+                    </div>
+                    </nav><!--/nav_content -->
+                </div><!-- /header_nav -->
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- main -->
+    <main class="mb-3 px-4">
+        <div class="container mb-5">
+            <!-- title_main -->
+            <h1 class="pt-2 pb-2">Formulario de Contato:</h1>
+            <hr class="mt-2"><!-- /title_main -->
+            <p>
+                Preencha corretamente o formulario de dúvidas. Sua menssagem será respondida em pelo menos 1 semana.
+            </p>
+            <div class="row">
+                <div class="px-0 col-12">
+                    <div class="form-group">
+                        <label class="mt-2" for="email_profile">E-mail</label>
+                        <input id="email_profile" class="form-control pl-3" type="email" name="email_profile" placeholder="Seu Email">
+                        <label class="mt-2" for="textarea">Assunto</label>
+                        <textarea id="textarea" class="form-control p-3 pt-2" name="" rows="6" placeholder="Digite Aqui"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 pl-0 my-1">
+                    <a href="suporte.html" class="btn btn-info btn-block py-2">
+                        Voltar
+                    </a>
+                </div>
+                <div class="col-6 pr-0 my-1">
+                    <button onclick="saveProfile()" class="btn btn-blue btn-block py-2">
+                        Enviar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main><!-- /main -->
+    <!-- footer -->
+    <footer class="p-relative mt-2">
+        <!-- div_logoFooter -->
+        <div class="container text-center p-3 p-sm-4 mb-0">
+            <a href="#">
+                <img src="img/logo_empresa.png" class="img-codeShark mb-2" alt="" srcset="">
+            </a>
+            <small class="text-muted">
+                EasyLife © 2007  |  Todos os direitos reservados.
+            </small>    
+        </div><!-- /div_logoFooter -->
+    </footer><!-- /footer -->
+    <!-- bootstrap -->
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"
+    ></script>
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"
+    ></script>
+    <!-- Alert bonito -->
+    <script 
+        src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"
+    ></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script 
+        src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"
+    ></script>
+    <script 
+        src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"
+    ></script>
+    <script 
+        src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"
+    ></script>
+    <!-- scripts -->
+    <script
+        src="js/init.js"
+    ></script>
+    <script
+        src="js/auth.js"
+    ></script>
+    <script
+        src="js/main.js"
+    ></script>
+    <script>
+        getUser()
+    </script>
+</body>
+</html>
