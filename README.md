@@ -4,4 +4,6 @@ Um projeto de webapp TodoList integrado com firebase para facilitar o dia a dia.
 
 ---
 
-easy-life-3db2d.firebaseapp.com/
+Acesse o projeto:
+
+link: easy-life-3db2d.firebaseapp.com/
